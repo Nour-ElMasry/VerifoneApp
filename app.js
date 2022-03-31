@@ -63,15 +63,15 @@ app.get("/", (req, res) => {
 // })
 
 app.post("/addProdToCart", (req, res) => {
-    Product.updateOne({ _id: req.body.cartProd }, { addedToCart: true }, (err) => err ? console.log(err) : res.redirect("/" + currency));
+    Product.updateOne({ _id: req.body.cartProd }, { addedToCart: true }, (err) => err ? console.log(err) : res.redirect("/"));
 });
 
 app.post("/delete", (req, res) => {
-    Product.updateOne({ _id: req.body.removeProd }, { addedToCart: false }, (err) => err ? console.log(err) : res.redirect("/" + currency))
+    Product.updateOne({ _id: req.body.removeProd }, { addedToCart: false }, (err) => err ? console.log(err) : res.redirect("/"))
 });
 
 app.post("/reset", (req, res) => {
-    Product.updateMany({ addedToCart: true }, { addedToCart: false }, (err) => err ? console.log(err) : res.redirect("/" + currency));
+    Product.updateMany({ addedToCart: true }, { addedToCart: false }, (err) => err ? console.log(err) : res.redirect("/"));
 });
 
 app.listen(process.env.PORT || 3000, function() {
