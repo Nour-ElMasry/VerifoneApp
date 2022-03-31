@@ -4,7 +4,7 @@ Author: Elafifi Nour Eldin
 
 Salutare!
 
-in acest github repository am pus rezolvarea pentru test-ul data de Verifone
+in acest github repository am pus rezolvarea pentru test-ul dat de Verifone
 
 aceasta aplicatie a fost implementata cu:
 - NodeJs, ExpressJs si EJS pentru partea de server
