@@ -4,7 +4,7 @@ Author: Elafifi Nour Eldin
 
 Salutare!
 
-in acest github repository am pus applicatia data de Verifone pentru postul de Front-End Intern
+in acest github repository am pus aplicatia data de Verifone pentru postul de Front-End Intern
 
 aceasta aplicatie a fost implementata cu:
   -NodeJs, ExpressJs si EJS pentru partea de server.
@@ -14,9 +14,9 @@ aceasta aplicatie a fost implementata cu:
 Heroku Link: https://secure-eyrie-18081.herokuapp.com
 (ATENTIE: API-ul folosit pentru currency conversion nu merge din cauza ca varianta free imi da o pagina unsecured si heroku nu accepta paginile unsecured)
 
-- Ca sa vedeti cum functiuneaza currency conversion-ul trebuie sa clonati repository-ul asta de git si sa rulati applicatia locally
+- Ca sa vedeti cum functiuneaza currency conversion-ul trebuie sa clonati repository-ul asta de git si sa rulati aplicatia locally
 
-INSTRUCTIUNI PENTRU RULAREA APPLICATIA LOCALLY:
+INSTRUCTIUNI PENTRU RULAREA APLICATIA LOCALLY:
   - clonati repository-ul
   - descide-ti CMD-ul
   - va duceti la locatia unde ati dat clone la repository
