@@ -1,0 +1,84 @@
+<%- include("partials/header") -%>
+    <script src="https://kit.fontawesome.com/d5cb0786f4.js" crossorigin="anonymous"></script>
+    <section class="main">
+        <div class="container centering">
+            <h1>Checkout page</h1>
+            <hr class="blue-line" align="left">
+            <div class="grid-container">
+                <div class="productsList">
+                    <% products.forEach(p => { %>
+                        <div class="product flex flex-jc-sb flex-ai-c">
+                            <div class="product__name">
+                                <p>
+                                    <%= p.name %>
+                                </p>
+                            </div>
+                            <div class="product__pricing flex flex-ai-c">
+                                <p>
+                                    Price:
+                                    <span class="currency">€</span><span class="price"><%= p.price %></span>
+                                </p>
+                                <form>
+                                    <button class="btn" name="cartProd" formmethod="post" formaction="/addProdToCart" value='<%= p._id %>'><i class="fa fa-thin fa-cart-shopping"></i> Add to cart</button>
+                                </form>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+                <div class="summary">
+                    <%if(cartProducts.length == 0){%>
+                        <h1>No Products in your shopping cart</h1>
+                        <%}else{%>
+                            <h1>Products in your shopping cart</h1>
+                            <div class="summary__container">
+                                <div class="summary__template flex flex-jc-sb flex-ai-c">
+                                    <div class="summary__name">
+                                        <p>Product</p>
+                                    </div>
+                                    <div class="summary__pricing flex flex-ai-c">
+                                        <p>Quantity</p>
+                                        <p>Value</p>
+                                    </div>
+                                </div>
+                                <% cartProducts.forEach(p => { %>
+                                    <div class="summary__product flex flex-jc-sb flex-ai-c">
+                                        <div class="summary__name flex">
+                                            <form>
+                                                <input type="hidden" name="removeProd" value='<%=p._id%>'>
+                                                <button class="btn" id="btnremove" formmethod="post" formaction="/delete">-</button>
+                                            </form>
+                                            <p>
+                                                <%= p.name %>
+                                            </p>
+                                            <div class="popup">
+                                                <i class="fa fa-light fa-circle-info"></i>
+                                                <%if(p.description != null){%>
+                                                    <span class="popuptext"><%= p.description %></span>
+                                                    <%} else {%>
+                                                        <span class="popuptext" id="myPopup">No Description</span>
+                                                        <%}%>
+                                            </div>
+                                        </div>
+                                        <div class="summary__pricing flex flex-ai-c">
+                                            <input type="number" min="1" value="1" class="quantity">
+                                            <p class="value">
+                                                <span class="currency">€</span><span class="price" id="quantityPrice"><%=p.price%></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                                        <div class="checkout">
+                                            <h1>Total:
+                                                <span class="currency"> </span><span class="cartTotal"> </span>
+                                            </h1>
+                                            <form>
+                                                <button class="btn" formmethod="Post" formaction="/reset" onclick="alert('Checkout Successful!')">Continue</button>
+                                            </form>
+                                        </div>
+                            </div>
+                            <%}%>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include("partials/footer") -%>

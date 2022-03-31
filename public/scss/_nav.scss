@@ -1,0 +1,16 @@
+.header {
+    background-color: $limeGreen;
+    color: $white;
+    padding: 20px 0;
+    .brand {
+        a {
+            font-size: $font-lg;
+            text-decoration: none;
+            color: $white;
+        }
+    }
+    #currency {
+        height: 25px;
+        width: 100px;
+    }
+}

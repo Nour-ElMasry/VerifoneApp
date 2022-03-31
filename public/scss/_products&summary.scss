@@ -1,0 +1,166 @@
+.main {
+    margin-top: 6.5rem;
+    .blue-line {
+        margin: 0.9375rem 0rem 1.5625rem 0.3125rem;
+        height: 2.5px;
+        width: 2.625rem;
+        background-color: $babyBlue;
+        border: none;
+        border-radius: 0.625rem;
+    }
+    .centering {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: inherit;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1.75fr 1.25fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "productsList summary";
+        font-weight: 500;
+        gap: 2rem;
+        .productsList {
+            grid-area: productsList;
+            .product {
+                background-color: $white;
+                border-radius: 2px;
+                padding: 0.625rem;
+                &:not(:last-child) {
+                    margin-bottom: 0.625rem;
+                }
+                &__pricing {
+                    p {
+                        font-size: $font-sm;
+                        >span {
+                            color: $babyBlue;
+                        }
+                    }
+                    .btn {
+                        padding: 0.625rem 1.5625rem;
+                        margin-left: 1.875rem;
+                    }
+                }
+            }
+            >.product {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .summary {
+            grid-area: summary;
+            background-color: $veryLightBlue;
+            padding: 2rem;
+            border-radius: 2px;
+            border: solid 2px $LightBlue;
+            font-size: $font-sm;
+            h1 {
+                font-size: $font-md;
+                font-weight: 500;
+                margin-bottom: 2.5rem;
+            }
+            &__container {
+                padding: 0 5px;
+            }
+            &__template {
+                padding-bottom: 0.625rem;
+                border-bottom: solid 1px $LightBlue;
+                p {
+                    font-size: $font-xsm;
+                    font-weight: 400;
+                }
+            }
+            &__pricing {
+                .quantity {
+                    width: 2rem;
+                }
+                p {
+                    margin-left: 1.5625rem;
+                }
+                .value {
+                    font-size: $font-sm;
+                }
+            }
+            &__product {
+                padding: 0.9375rem 0rem;
+                &:not(:last-child) {
+                    border-bottom: solid 1px $LightBlue;
+                }
+                .summary__name {
+                    position: relative;
+                    p {
+                        margin-right: 0.5rem;
+                        transition: margin-left ease-in-out 275ms;
+                    }
+                    .btn {
+                        position: absolute;
+                        opacity: 0;
+                        background-color: red;
+                        transition: all ease-in 250ms;
+                    }
+                    .popup {
+                        position: relative;
+                        display: block;
+                        text-align: left;
+                        .popuptext {
+                            visibility: hidden;
+                            background-color: $white;
+                            padding: 5px 10px;
+                            width: 13rem;
+                            text-align: left;
+                            border-radius: 3px;
+                            position: absolute;
+                            left: 2rem;
+                            top: -1.15rem;
+                            z-index: 1;
+                            &::after {
+                                content: " ";
+                                position: absolute;
+                                top: 50%;
+                                right: 100%;
+                                margin-top: -2.5rem;
+                                border-width: 0.5rem;
+                                border-style: solid;
+                                border-color: transparent $white transparent transparent;
+                            }
+                        }
+                        &:hover .popuptext {
+                            visibility: visible;
+                        }
+                        #myPopup {
+                            top: -0.3125rem;
+                            &::after {
+                                margin-top: -0.5rem;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .summary__name {
+                        .btn {
+                            opacity: 1;
+                        }
+                        p {
+                            margin-left: 1.625rem;
+                        }
+                    }
+                }
+            }
+            .checkout {
+                display: flex;
+                flex-direction: column;
+                h1 {
+                    margin: 0.9375rem 0rem;
+                    align-self: flex-end;
+                }
+                .btn {
+                    width: 100%;
+                    padding: 1rem 0rem;
+                    font-size: $font-md;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    background-color: $veryLightGray;
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-md;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+p {
+    margin: 0px;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+.btn {
+    background-color: $limeGreen;
+    color: $white;
+    border: none;
+    border-radius: 2px;
+    font-size: $font-sm;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity ease-in-out 300ms, transform ease-in-out 300ms;
+    &:hover {
+        opacity: 0.85;
+        transform: scale(1.05);
+    }
+}
