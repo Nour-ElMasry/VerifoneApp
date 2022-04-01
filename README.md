@@ -17,7 +17,9 @@ Heroku Link: https://secure-eyrie-18081.herokuapp.com
 
 - Ca sa vedeti cum functiuneaza currency conversion-ul trebuie sa clonati repository-ul asta de git si sa rulati aplicatia locally
 
+
 (ATENTIE: pentru a rula aplicatia locally trebuie sa instalati Node => https://nodejs.org/en/download/)
+
 INSTRUCTIUNI PENTRU RULAREA APLICATIA LOCALLY:
   - clonati repository-ul
   - descide-ti CMD-ul
