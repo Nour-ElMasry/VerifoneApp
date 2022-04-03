@@ -78,12 +78,6 @@ function ProductQuantities() {
     let initialPrices = [];
     value.forEach(v => initialPrices.push(parseFloat(v.innerHTML)))
     for (let i = 0; i < quantity.length; i++) {
-        if (quantity[i] > 1) {
-            let q = parseFloat(quantity[i].value);
-            let result = (initialPrices[i] * q).toFixed(2);
-            value[i].innerHTML = result;
-            calcTotal();
-        }
         quantity[i].onchange = () => {
             let q = parseFloat(quantity[i].value);
             let result = (initialPrices[i] * q).toFixed(2);
